@@ -3,18 +3,27 @@ let listBody = document.querySelector(".list table tbody");
 
 function successFunc(data) {
   console.log(data);
-  let tr = document.createElement("tr");
 
-  for (let j = 0; j < data.length; j++) {
+  for (let i = 0; i < data.length; i++) {
+    let tr = document.createElement("tr");
     let td = document.createElement("td");
 
-    td.append(data[j].name);
+    td.append(data[i].id);
+    td.append(data[i].name);
+    td.append(data[i].score);
+
     tr.append(td);
+    listBody.append(tr);
   };
 
-  listBody.append(tr);
 
-  listHeader.innerHTML = `<th>Name</th><th>Score</th>`;
+  for (let property in data[0]) {
+    let th = document.createElement("th");
+
+    th.append(property);
+    listHeader.append(th);
+  }
+
 }
 
 Sheetsu.read(

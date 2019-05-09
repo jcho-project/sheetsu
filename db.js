@@ -4,17 +4,23 @@ let listBody = document.querySelector(".list table tbody");
 function successFunc(data) {
   console.log(data);
 
+
   for (let i = 0; i < data.length; i++) {
+
     let tr = document.createElement("tr");
-    let td = document.createElement("td");
 
-    td.append(data[i].id);
-    td.append(data[i].name);
-    td.append(data[i].score);
+    Object.keys(data[i]).forEach((value) => {
+      let td = document.createElement("td");
 
-    tr.append(td);
-    listBody.append(tr);
+      td.append(data[i][value]);
+
+      tr.append(td);
+
+      listBody.append(tr);
+    });
   };
+
+
 
 
   for (let property in data[0]) {

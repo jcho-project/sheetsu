@@ -4,7 +4,6 @@ let listBody = document.querySelector(".list table tbody");
 function successFunc(data) {
   console.log(data);
 
-
   for (let i = 0; i < data.length; i++) {
 
     let tr = document.createElement("tr");
@@ -19,9 +18,6 @@ function successFunc(data) {
       listBody.append(tr);
     });
   };
-
-
-
 
   for (let property in data[0]) {
     let th = document.createElement("th");

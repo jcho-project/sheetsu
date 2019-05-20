@@ -1,5 +1,5 @@
-let listHeader = document.querySelector(".list table thead");
-let listBody = document.querySelector(".list table tbody");
+let listHeader = document.querySelector(".table thead");
+let listBody = document.querySelector(".table tbody");
 
 function successFunc(data) {
   console.log(data);
